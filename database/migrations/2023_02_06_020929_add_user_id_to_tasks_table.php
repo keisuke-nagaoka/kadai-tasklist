@@ -32,7 +32,7 @@ return new class extends Migration
         $table->dropForeign('tasks_user_id_foreign');
         
         Schema::table('tasks', function (Blueprint $table) {
-            $table->dropUnsignedBigInteger('user_id');
+            $table->dropColumn('user_id');
         });
     }
 };

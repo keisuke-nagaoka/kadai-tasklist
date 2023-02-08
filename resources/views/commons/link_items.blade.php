@@ -1,9 +1,6 @@
 @if (Auth::check())
-    {{-- ユーザ一覧ページへのリンク --}}
-    <li><a class="link link-hover" href="#">ユーザ一覧</a></li>
-    {{-- ユーザ詳細ページへのリンク --}}
-    <li><a class="link link-hover" href="#">{{ Auth::user()->name }}&#39;の詳細情報</a></li>
-    <li class="divider lg:hidden"></li>
+    {{-- ログイン中のユーザ名 --}}
+    <li><a>ようこそ {{ Auth::user()->name }} さん<a/></li>
     {{-- ログアウトへのリンク --}}
     <li><a class="link link-hover" href="#" onclick="event.preventDefault();this.closest('form').submit();">ログアウト</a></li>
 @else
