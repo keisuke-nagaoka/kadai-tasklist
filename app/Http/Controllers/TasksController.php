@@ -75,8 +75,13 @@ class TasksController extends Controller
     {
         $task = Task::findOrFail($id);
         
-        return view('tasks.show', [
-        'task' => $task,]);
+        if (\Auth::id() === $task->user_id) {
+            return view('tasks.show', [
+            'task' => $task,
+            ]);
+        }
+        
+        return view('dashbord');
     }
 
     /**
@@ -91,7 +96,7 @@ class TasksController extends Controller
 
         if (\Auth::id() === $task->user_id) {
             return view('tasks.edit', [
-                'task' => $task,
+            'task' => $task,
             ]);
         }
         
