@@ -81,7 +81,7 @@ class TasksController extends Controller
             ]);
         }
         
-        return view('dashbord');
+        return view('dashboard');
     }
 
     /**
